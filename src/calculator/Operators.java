@@ -3,6 +3,9 @@ package calculator;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * All operators that are valid and can be used in the calculator.
+ */
 public enum Operators {
     PLUS("+"),
     MINUS("-"),
@@ -26,6 +29,9 @@ public enum Operators {
         this.operator = operator;
     }
 
+    /**
+     * @return an {@link ArrayList} of all operators.
+     */
     public static List<String> getOperators() {
         List<String> operators = new ArrayList<>();
         for (Operators operator : values()) {
@@ -34,10 +40,16 @@ public enum Operators {
         return operators;
     }
 
+    /**
+     * @return an operator as a string.
+     */
     public String asString() {
         return this.operator;
     }
 
+    /**
+     * @return an {@link ArrayList} of {@code "two-way operators"}, which indicates that you need two different numbers to perform an operation.
+     */
     public static List<String> twoWayOperators() {
         return List.of(
                 Operators.PLUS.asString(),
@@ -48,6 +60,9 @@ public enum Operators {
         );
     }
 
+    /**
+     * @return an {@link ArrayList} of {@code "one-way operators"}, which mean you only need 1 value to perform an operation.
+     */
     public static List<String> oneWayOperators() {
         return List.of(
                 Operators.SQUARE_ROOT.asString(),

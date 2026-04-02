@@ -4,9 +4,15 @@ import javax.swing.*;
 import javax.swing.text.JTextComponent;
 import java.awt.event.ActionListener;
 
+/**
+ * An abstract representation of a calculator screen, containing helper method to create buttons with correct listeners, and so that they are placed in the correct position.
+ */
 public abstract class Screen implements ActionListener {
     private final JFrame frame = new JFrame();
 
+    /**
+     * Constructs the screen.
+     */
     public Screen() {
         this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.frame.setSize(500, 500);
@@ -62,5 +68,8 @@ public abstract class Screen implements ActionListener {
         return this.frame;
     }
 
+    /**
+     * The window title for the screen (ex. Calculator).
+     */
     protected abstract String windowTitle();
 }

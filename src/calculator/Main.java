@@ -10,12 +10,20 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Dillon S.
+ * <p>4/2/26
+ * <p>An advanced calculator in Java, which I have spent a long time working on.
+ */
 public class Main {
     public static boolean bl = false;
     public static boolean roundNumbers = true;
     public static final String file = "options.txt";
     private static final List<JTextField> inputs = new ArrayList<>();
 
+    /**
+     * Main method. Constructs and renders the calculator.
+     */
     public static void main(String[] args) {
         System.out.println("Starting calculator app...");
 
@@ -37,6 +45,9 @@ public class Main {
         System.out.println("Successfully started calculator app!");
     }
 
+    /**
+     * Creates the options file for the calculator, indicating if the user wants to round numbers.
+     */
     private static void createOptionsFile() {
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
@@ -47,6 +58,9 @@ public class Main {
         }
     }
 
+    /**
+     * Opens the calculator screen, and adds listeners for each field.
+     */
     private static void openCalculatorScreen() {
         Calculator launchPage = new Calculator();
         inputs.add(launchPage.getMainInput());

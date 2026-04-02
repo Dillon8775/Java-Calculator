@@ -5,6 +5,9 @@ import calculator.Operators;
 import javax.swing.*;
 import java.util.List;
 
+/**
+ * Utility class.
+ */
 public class OperatorJCombo extends JComboBox<String> {
 
     public OperatorJCombo() {

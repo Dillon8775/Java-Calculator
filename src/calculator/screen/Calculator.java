@@ -19,6 +19,7 @@ public class Calculator extends Screen {
     private final JTextField secondaryInput = new JTextField();
     private final JTextField resultBox = new JTextField("Answer will appear here.");
     private final OperatorJCombo operators = new OperatorJCombo();
+    private final JButton clearButton = new JButton("Clear");
     private final JButton calculateButton = new JButton("Calculate");
     private final JButton settingsButton = new JButton();
     private final JButton exitButton = new JButton("Exit");
@@ -32,6 +33,7 @@ public class Calculator extends Screen {
         this.ofDropdown(this.operators, createBounds(205, 75, 75, 20), true);
         this.ofTextComponent(this.secondaryInput, createBounds(305, 75, 100, 20));
         this.ofTextComponent(this.resultBox, createBounds(140, 350, 200, 40), false);
+        this.ofButton(this.clearButton, createBounds(140, 175, 200, 40), true, false);
         this.ofButton(this.calculateButton, createBounds(140, 225, 200, 40), true, false);
         this.ofButton(this.settingsButton, createBounds(450, 425, 20, 20), true, false);
         this.ofButton(this.exitButton, createBounds(140, 275, 200, 40), true, false);
@@ -124,6 +126,11 @@ public class Calculator extends Screen {
         if (a.getSource() == this.settingsButton) {
             new Settings();
             this.getFrame().dispose();
+        }
+
+        if (a.getSource() == this.clearButton) {
+            this.mainInput.setText("");
+            this.secondaryInput.setText("");
         }
 
         for (JButton button : this.buttons) {

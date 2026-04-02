@@ -8,12 +8,18 @@ import java.awt.event.ActionEvent;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * The settings screen for the calculator. Currently there is only one setting, "roundNumbers", and that's it. We will still create a text file for it, however, because why not?
+ */
 public class Settings extends calculator.screen.Screen {
     private final JLabel settingsTitle = new JLabel("Settings");
     private final JLabel roundNumbersLabel = new JLabel("Round Numbers");
     private final JComboBox<String> roundNumbersOptionLabel = new JComboBox<>(new String[]{"true", "false"});
     private final JButton exit = new JButton("Go Back and Save");
 
+    /**
+     * Constructs the settings screen.
+     */
     public Settings() {
         this.ofTextLabel(this.settingsTitle, createBounds(190, 40, 200, 40));
         this.ofTextLabel(this.roundNumbersLabel, createBounds(140, 100, 140, 20));
@@ -26,6 +32,9 @@ public class Settings extends calculator.screen.Screen {
         this.ofButton(this.exit, createBounds(140, 300, 200, 40), true, false);
     }
 
+    /**
+     * Handles changing the settings.
+     */
     @Override
     public void actionPerformed(ActionEvent a) {
         if (a.getSource() == this.roundNumbersOptionLabel) {
@@ -50,6 +59,9 @@ public class Settings extends calculator.screen.Screen {
         }
     }
 
+    /**
+     * @return the window settings for the Calculator.
+     */
     @Override
     protected String windowTitle() {
         return "Calculator Settings";
